@@ -1,0 +1,65 @@
+                                                         🧠 Multi-Input Emotion Prediction System — Documentation
+
+📌 Project Overview
+
+This project is an advanced emotion prediction system built using Streamlit for the frontend and various pretrained transformer models for emotion detection. It supports three input modes:
+
+1. Text Input
+2. Voice Input
+3. Emoji Input
+
+The application identifies the emotion behind each input using robust NLP models and displays results in a user-friendly web interface.
+
+
+🎯 Features
+
+* ✅ Predicts fine-grained emotions (like joy, anger, fear, etc.) from text.
+* 🎙 Supports speech input through microphone and performs transcription.
+* 😊 Accepts emoji input and maps it to corresponding emotional categories.
+* 🔥 Uses state-of-the-art pretrained models from HuggingFace.
+* 🧠 Built with PyTorch and Streamlit for interactive deployment.
+
+🧩 Tech Stack
+
+| Component     | Technology / Model Used                         |
+| ------------- | ----------------------------------------------- |
+| Frontend      | Streamlit                                       |
+| Text Emotion  | `j-hartmann/emotion-english-distilroberta-base` |
+| Emoji Emotion | `cardiffnlp/twitter-roberta-base-emoji`         |
+| Speech Input  | `SpeechRecognition` + Google Web Speech API     |
+| Tokenizers    | HuggingFace Transformers' `AutoTokenizer`       |
+| Backend       | PyTorch + Transformers                          |
+
+💡 Functionality Summary
+
+1. Text Input
+
+* User enters a text.
+* Model: `j-hartmann/emotion-english-distilroberta-base`.
+* Predicts one of the following emotions:
+
+* Anger, Disgust, Fear, Joy, Neutral, Sadness, Surprise.
+* Output: Emotion label and prediction confidence.
+
+2. Voice Input
+
+* Uses `speech_recognition` to capture and transcribe voice.
+* Transcribed text is passed through the same text emotion model.
+* Output: Recognized text, predicted emotion, and confidence.
+
+3. Emoji Input
+
+* User inputs a single emoji character.
+* Model: `cardiffnlp/twitter-roberta-base-emoji`.
+* Maps top emoji prediction to an emotion using a custom dictionary.
+* Output: Closest matching emoji, corresponding emotion, and confidence.
+
+
+📌 Future Improvements
+
+* Add image and video input for multimodal emotion prediction.
+* Store user emotion history in local or cloud storage.
+* Visualize emotion trends over time using charts.
+* Deploy app to Streamlit Cloud or Render.
+
+
